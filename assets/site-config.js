@@ -4,9 +4,8 @@
 window.PORTFOLIO = {
   profile: { name: '', email: '', resume: '' },
   projects: {
-    'blood-hunter': { image: '', imageAlt: 'Blood Hunter 실제 작업 이미지', video: '', document: '', github: '' },
-    ramen: { image: '', imageAlt: '나의 인생 라멘가게 실제 플레이 화면', video: '', document: '', github: '' },
-    multiplayer: { image: '', imageAlt: '3D 멀티플레이 실제 플레이 화면', video: '', document: '', github: '' },
-    signal: { image: '', imageAlt: '잔존 신호 실제 시네마틱 장면', video: '', document: '', github: '' }
+    'blood-hunter': { image: 'assets/blood-hunter.png', imageAlt: 'Blood Hunter 기획서 표지', video: '', document: '', github: '' },
+    ramen: { image: 'assets/ramen.png', imageAlt: '나의 인생 라멘가게 타이틀 화면', video: '', document: '', github: '' },
+    multiplayer: { image: 'assets/multiplayer.png', imageAlt: 'Paint Rumble 타이틀 화면', video: '', document: '', github: '' },
   }
 };
