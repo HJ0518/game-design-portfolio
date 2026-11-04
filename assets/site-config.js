@@ -4,7 +4,7 @@
 window.PORTFOLIO = {
   profile: { name: '', email: '', resume: '' },
   projects: {
-    'blood-hunter': { image: 'assets/blood-hunter.png', imageAlt: 'Blood Hunter 기획서 표지', video: '', document: '', github: '' },
+    'blood-hunter': { image: 'assets/blood-hunter.png', imageAlt: 'Blood Hunter 기획서 표지', video: '', documentLabel: '원본 기획서 (Gamma · 현재 로그인 필요)', document: 'https://gamma.app/docs/Blood-Hunter-a4sru1bgxecbnbe', github: '' },
     ramen: { image: 'assets/ramen.png', imageAlt: '나의 인생 라멘가게 타이틀 화면', video: '', document: '', github: '' },
     multiplayer: { image: 'assets/multiplayer.png', imageAlt: 'Paint Rumble 타이틀 화면', video: '', document: '', github: '' },
   }
