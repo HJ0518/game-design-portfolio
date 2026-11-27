@@ -1,0 +1,24 @@
+.deck-viewer{padding-block:30px 78px;scroll-margin-top:88px}
+.deck-heading{display:flex;gap:16px;justify-content:space-between;align-items:end;margin-bottom:22px}
+.deck-heading h2{font-size:clamp(1.7rem,4vw,2.8rem);margin:.3rem 0 0;line-height:1.15;letter-spacing:-.045em}
+.deck-heading p,.deck-slide figcaption{color:var(--muted,#c5bfba);font-size:.88rem}
+.deck-heading p{margin:0;white-space:nowrap}
+.deck-controls{display:grid;grid-template-columns:auto minmax(0,18rem) auto 1fr;gap:8px;align-items:center;margin-bottom:12px}
+.deck-viewer [hidden]{display:none!important}
+.deck-controls button,.deck-controls select{border:1px solid #ffffff30;border-radius:4px;background:#231f20;color:#fdf9f2;font:inherit;padding:8px 12px;min-height:44px}
+.deck-controls button{cursor:pointer;white-space:nowrap}
+.deck-controls button:hover:not(:disabled){border-color:#fdb813;color:#fdb813}
+.deck-controls button:disabled{opacity:.48;cursor:default}
+.deck-controls select{width:100%;text-overflow:ellipsis}
+.deck-controls :focus-visible,.deck-slide a:focus-visible,.deck-transcript summary:focus-visible{outline:2px solid #fdb813;outline-offset:3px}
+.deck-controls output{text-align:right;font-variant-numeric:tabular-nums;color:#fdb813;white-space:nowrap}
+.deck-slide{min-width:0}
+.deck-slide figure{margin:0}
+.deck-slide figure>a{display:block;background:#191719;border:1px solid #ffffff35}
+.deck-slide img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.deck-slide figcaption{padding:10px 0 0}
+.deck-transcript{margin:12px 0 22px;color:var(--muted,#c5bfba);font-size:.88rem}
+.deck-transcript summary{cursor:pointer;width:fit-content}
+.deck-transcript ul{padding-left:22px;max-width:72ch;line-height:1.65}
+.deck-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:550px){.deck-viewer{padding-block:20px 45px}.deck-heading{margin-bottom:14px}.deck-controls{grid-template-columns:auto minmax(0,1fr) auto}.deck-controls output{grid-column:1/-1;text-align:left;font-size:.8rem}.deck-controls button,.deck-controls select{padding-inline:7px;font-size:.8rem}.deck-slide figcaption{font-size:.8rem}}
