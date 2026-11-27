@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+<title id="title">바운티헌터 신규 전직 기획서</title>
+<defs><pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#fff" stroke-opacity=".065"/></pattern><linearGradient id="shade" x2="1" y2="1"><stop stop-color="#211f21"/><stop offset="1" stop-color="#392727"/></linearGradient></defs>
+<path fill="url(#shade)" d="M0 0h960v540H0z"/><path fill="url(#grid)" d="M0 0h960v540H0z"/>
+<path d="M58 66h110M58 468h844" stroke="#fdb813" stroke-width="3"/><path d="M58 484h844" stroke="#fdb813" stroke-opacity=".4"/>
+<g fill="#fdb813" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="4"><text x="58" y="114">DUNGEON &amp; FIGHTER</text><text x="58" y="425">02 / CHARACTER DESIGN</text></g>
+<g fill="#fff" font-family="Arial,sans-serif" font-size="82" font-weight="800" letter-spacing="-3"><text x="54" y="241">BOUNTY</text><text x="54" y="326">HUNTER</text></g>
+<g transform="translate(739 271) rotate(42)" fill="none" stroke="#fdb813" stroke-linecap="round" stroke-linejoin="round">
+<circle r="148" opacity=".25" stroke-width="2"/><path d="M0-166L7-100 3 41H-3L-7-100Z" fill="#e6c987" fill-opacity=".55" stroke-width="2.2"/>
+<path d="M-50 41H50M-43 42Q-32 77 0 78Q32 77 43 42M0 79v55M-12 135h24M32 44q29 71-18 90" stroke-width="6"/>
+<path d="M-13 95h26m-26 11h26m-26 11h26" stroke-width="2" opacity=".58"/>
+</g></svg>
