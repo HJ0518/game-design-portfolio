@@ -92,6 +92,7 @@ function markActive(links,hash) {
 function updateReader() {
   let current = "#profile";
   const probe = window.innerHeight * .34;
+  if (document.getElementById("projects").getBoundingClientRect().top < probe) current = "#projects";
   if (document.getElementById("team-projects").getBoundingClientRect().top < probe) current = "#team-projects";
   if (opened) {
     const sheet = opened.querySelector(".paper");
@@ -102,9 +103,9 @@ function updateReader() {
     opened.querySelector("progress").value = ratio * 100;
     opened.querySelector("output").textContent = Math.round(ratio*100) + "%";
     markActive(all(".reader nav a",opened),"#" + active.id);
-    if (rect.top < probe && rect.bottom > 0) current = ["breaker","bounty-hunter"].includes(opened.dataset.project) ? "#" + opened.dataset.project : "#team-projects";
+    if (rect.top < probe && rect.bottom > 0) current = ["breaker","bounty-hunter","blood-hunter"].includes(opened.dataset.project) ? "#projects" : "#team-projects";
   }
-  if (window.scrollY > 0 && window.innerHeight+window.scrollY >= document.documentElement.scrollHeight-3) current = "#contact";
+  if (window.scrollY > 0 && window.innerHeight+window.scrollY >= document.documentElement.scrollHeight-3) current = !opened && location.hash === "#team-projects" ? "#team-projects" : "#contact";
   markActive(all(".topbar nav a"),current);
 }
 let framePending = false;
@@ -152,50 +153,3 @@ if ("IntersectionObserver" in window && !reduceMotion.matches) {
 window.addEventListener("beforeprint",() => {
   for (const img of all(".deck img[data-src]")) if (!img.hasAttribute("src")) img.src = img.dataset.src;
 });
-
-function paintSky() {
-  const canvas = document.getElementById("sky");
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
-  let stars = [], animation = 0, width, height;
-  let lastDraw = -100;
-  function draw(time) {
-    if (!reduceMotion.matches && time-lastDraw<65) {animation=requestAnimationFrame(draw);return;}
-    lastDraw=time;
-    ctx.clearRect(0,0,width,height);
-    stars.forEach(({x,y,r,phase}) => {
-      ctx.globalAlpha=.45+.38*Math.sin(time*.0006+phase);
-      ctx.shadowBlur=r>1.6?6:0;ctx.shadowColor="#dfe7ff";ctx.fillStyle="#dfedff";ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
-    });
-    ctx.shadowBlur=0;
-    if (!reduceMotion.matches) {
-      const travel = (time%9500)/1250;
-      if (travel < 1) {
-        const x=width*(.27+travel*.29),y=height*(.16+travel*.17);
-        const trail=ctx.createLinearGradient(x-55,y-25,x,y);
-        trail.addColorStop(0,"transparent");trail.addColorStop(1,"#e4f5ff");
-        ctx.globalAlpha=Math.sin(travel*Math.PI)*.8;ctx.strokeStyle=trail;
-        ctx.beginPath();ctx.moveTo(x-55,y-25);ctx.lineTo(x,y);ctx.stroke();
-      }
-      animation=requestAnimationFrame(draw);
-    }
-  }
-  function reset() {
-    cancelAnimationFrame(animation);
-    if (document.hidden) return;
-    width=innerWidth;height=innerHeight;
-    const scale=Math.min(2,devicePixelRatio||1);
-    canvas.width=width*scale;canvas.height=height*scale;ctx.setTransform(scale,0,0,scale,0,0);
-    let seed=61;
-    const random=()=>(seed=(seed*48271)%2147483647)/2147483647;
-    stars=Array.from({length:Math.min(230,Math.ceil(width*height/6500))},()=>({x:random()*width,y:random()*height,r:.4+random()*.95,phase:random()*6.28}));
-    for(let i=0;i<Math.min(1500,width*1.2);i++){
-      const x=random()*width,offset=(random()+random()+random()-1.5)*height*.24;
-      stars.push({x,y:height*.95-x*.44+offset,r:.15+random()*.42,phase:random()*6.28});
-    }
-    for(let i=0;i<12;i++)stars.push({x:random()*width,y:random()*height,r:1.6+random(),phase:random()*6.28});
-    draw(performance.now());
-  }
-  window.addEventListener("resize",reset);document.addEventListener("visibilitychange",reset);reduceMotion.addEventListener("change",reset);reset();
-}
-paintSky();
