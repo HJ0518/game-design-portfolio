@@ -61,3 +61,8 @@
 
 .home-directory{position:static;align-self:stretch;display:block;border-left:0;padding-left:0}
 @media(max-width:880px){.home-directory{display:none}}
+
+/* Keep all profile information aligned against the portrait. */
+.profile-intro {min-width:0;text-align:right}
+.profile-intro h1,.profile-intro .profile-tags,.profile-intro .profile-contact {justify-content:flex-end}
+.profile-intro p {margin-inline-start:auto}
