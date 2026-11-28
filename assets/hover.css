@@ -1,0 +1,6 @@
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  :where(.brand,.case-brand,.topbar nav a,body>header nav a,.ctas a,.button,.back,.return,.source,.down,.resources a,.document-foot a,.view-source){display:inline-block}
+  :is(.brand,.case-brand,header nav a,.ctas a,.button,.back,.return,.source,.down,.resources a,.document-foot a,.view-source,button:not(:disabled)){transition:translate 150ms ease-out}
+  :is(.brand,.case-brand,header nav a,.ctas a,.button,.back,.return,.source,.down,.resources a,.document-foot a,.view-source,button:not(:disabled)):hover{translate:0 -2px}
+}
+@media (prefers-reduced-motion:reduce),(hover:none){.card:hover{transform:none}}

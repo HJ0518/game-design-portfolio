@@ -1,0 +1,51 @@
+.slide-stack{container-type:inline-size}
+.deck-slide{background:#f5f0e6;color:#282522;min-height:52cqw;padding:clamp(20px,4.6cqw,80px) clamp(20px,5cqw,90px) clamp(15px,2.8cqw,45px);display:flex;flex-direction:column;font-size:clamp(16px,1.52cqw,29px);line-height:1.58;word-break:keep-all;overflow-wrap:anywhere}
+.deck-slide ::selection{background:#ffdb73;color:#231f20}
+.deck-slide h2{font-size:clamp(26px,3.2cqw,60px);line-height:1.2;letter-spacing:-.055em;margin:0;padding-bottom:.45em;border-bottom:1px solid #cfc4b0}
+.deck-slide .slide-body{flex:1;display:grid;align-content:center;gap:clamp(17px,2.1cqw,40px);padding-block:clamp(22px,2.8cqw,54px)}
+.deck-slide .columns{display:grid;gap:clamp(16px,2.5cqw,46px);align-items:center}
+.deck-slide .columns>div{min-width:0}
+.deck-slide .n2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.deck-slide .n3{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+.deck-slide .unit,.deck-slide .blocks{display:grid;gap:.33em;align-content:start}
+.deck-slide .blocks{gap:1.15em}
+.deck-slide p,.deck-slide h3{margin:0}
+.deck-slide h3{font-size:1.35em;line-height:1.35;letter-spacing:-.04em}
+.deck-slide .kicker{font-size:.86em;color:#795815;font-weight:700}
+.deck-slide .caption,.deck-slide .slide-footer{font-size:.82em;color:#625a50}
+.deck-slide .slide-footer{display:flex;gap:1em;justify-content:space-between;border-top:1px solid #cfc4b0;padding-top:.65em}
+.deck-slide .intro-line,.deck-slide .takeaway{font-weight:600}
+.deck-slide .character-name{font-size:2.5em;line-height:1.12;margin-bottom:.2em}
+.deck-slide .zoom-image{display:block;width:fit-content;max-width:100%;margin-inline:auto;cursor:zoom-in;border-radius:2px}
+.deck-slide .zoom-image img{display:block;width:auto;max-width:100%;height:auto;max-height:35cqw;aspect-ratio:auto;background:transparent}
+.deck-slide .n3 .zoom-image{margin-bottom:.55em}
+.breaker-6 .blocks .zoom-image{margin-inline:0}
+.breaker-6 .blocks .zoom-image img{max-height:12cqw}
+.bounty-5 .reference-strip{display:flex;align-items:center;gap:1em;flex-wrap:wrap}
+.bounty-5 .reference-strip .zoom-image{margin:0}
+.bounty-5 .reference-strip img{max-height:6cqw}
+.bounty-5 .n3>div,.bounty-6 .n3>div{padding:.8em;background:#ebe3d4;border-top:2px solid #bda983;align-self:stretch}
+.bounty-6 .n3 img{max-height:20cqw}
+.deck-slide .table-wrap{max-width:100%;overflow-x:auto}
+.deck-slide table{border-collapse:collapse;width:100%;color:inherit;font-size:.98em;line-height:1.55}
+.deck-slide th,.deck-slide td{text-align:left;padding:.64em .8em;border:1px solid #c8bea9;vertical-align:middle}
+.deck-slide th{background:#39332c;color:#fff9eb}
+.deck-slide td:first-child{font-weight:700;background:#eee7d9}
+.image-viewer{position:fixed;inset:0;margin:auto;padding:0;width:fit-content;max-width:96vw;border:0;background:transparent;color:#fff;max-height:96dvh;overflow:visible}
+.image-viewer::backdrop{background:rgba(13,12,12,.94)}
+.image-viewer .view-bar{display:flex;justify-content:flex-end;gap:8px;padding:4px 3px 10px}
+.image-viewer button,.image-viewer .view-source{border:1px solid #766d65;border-radius:6px;background:#292524;color:white;font:inherit;font-size:14px;padding:5px 12px;display:inline-block}
+.image-viewer .view-stage{display:grid;place-items:center;width:fit-content;max-width:94vw;overflow:auto;max-height:82dvh;margin:auto}
+.image-viewer img{width:auto;height:auto;max-width:94vw;max-height:82dvh;object-fit:contain;display:block;margin:auto}
+.image-viewer .view-stage.magnified{display:block}
+.image-viewer .magnified img{max-width:none;max-height:none;width:var(--zoom-width)}
+html:has(.image-viewer[open]){overflow:hidden}
+@media(max-width:720px){
+  .deck-slide{font-size:16px;min-height:0}.deck-slide .columns{grid-template-columns:1fr;align-items:start}
+  .deck-slide .slide-body{padding-block:20px}.deck-slide h2{font-size:25px}
+  .deck-slide .zoom-image img{max-height:min(72vh,420px)}.breaker-6 .blocks .zoom-image img{max-height:150px}
+  .bounty-5 .reference-strip img{max-height:52px}.deck-slide .takeaway{font-size:1em}
+  .deck-slide .table-wrap table{font-size:14px}.deck-slide th,.deck-slide td{padding:.45em}
+  .deck-slide .slide-footer{font-size:12px}
+}
+@media print{.deck-slide{color:#181818;min-height:0}.image-viewer{display:none}}
